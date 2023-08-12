@@ -13,6 +13,14 @@ import com.accountservice.accountservice.dto.Account;
 @RestController
 public class AccountController {
 
+    @PostMapping("/addAccount")
+	public Account addAccount(@RequestBody Account account){
+		return account;
+	}
+
+
+    
+
 
     @PostMapping("/accounts/validate")
     public ResponseEntity<TransferValidationResponse> validateTransfer(@RequestBody TransferValidationRequest request) {
