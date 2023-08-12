@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.accountservice.dao.AccountRepo;
-import com.accountservice.model.Account;
+import com.accountservice.accountservice.dao.AccountRepo;
+import com.accountservice.accountservice.dto.Account;
 
 
 @Service

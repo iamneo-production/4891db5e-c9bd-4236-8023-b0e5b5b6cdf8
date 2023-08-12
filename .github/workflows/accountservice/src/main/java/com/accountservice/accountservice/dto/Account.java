@@ -1,5 +1,13 @@
 package com.accountservice.accountservice.dto;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data;
+
 @Data
 @Entity
 @Table(name="Accounts_Table")
@@ -7,18 +15,18 @@ public class Account {
 
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	 private int Id;
-	 @Column
+	 @Column(name="account_number")
 	 private String acc_number;
-	 @Column
+	 @Column(name="account_name")
 	 private String acc_name;
-	 @Column
+	 @Column(name="account_EmailID")
 	 private String acc_emailId;
-	 @Column
+	 @Column(name="account_status")
 	 private  String acc_status;
-	 @Column
-	 private String acc_type;
-	 @Column
+	 
+	 @Column(name="account_balance")
 	 private double acc_balance;
 	public int getId() {
 		return Id;
