@@ -2,12 +2,11 @@ package com.notification.notificationservice.service;
 
 import java.time.LocalDateTime;
 
-import jakarta.mail.*;
-import jakarta.mail.internet.MimeMessage;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
+
+
 import org.springframework.stereotype.Service;
 
 import com.notification.notificationservice.Repository.NotificationRepository;
@@ -23,8 +22,8 @@ public class NotificationService {
    
     private NotificationRepository notificationRepository;
 
-    @Autowired
-    private JavaMailSender javaMailSender;
+
+    ///private JavaMailSender javaMailSender;
 
     
 
@@ -41,19 +40,21 @@ public void sendNotification(String senderEmail, Long senderAccNo) {
 
  
 
-        sendEmailNotification(notification);
+        //sendEmailNotification(notification);
     }
 
 
 
-private void sendEmailNotification(Notification notification) {
+/*private void sendEmailNotification(Notification notification) {
 
     MimeMessage message = javaMailSender.createMimeMessage();
     MimeMessageHelper helper = new MimeMessageHelper(message, "utf-8");
 
 
     String accountNumber = 
-          String.valueOf(notification.getSenderAccNo());
+    String.valueOf(notification.getSenderAccNo());
+
+
           
 
  
@@ -64,6 +65,7 @@ private void sendEmailNotification(Notification notification) {
          
    
 }
+*/
 
  
 
