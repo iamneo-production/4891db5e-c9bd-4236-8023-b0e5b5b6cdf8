@@ -1,17 +1,15 @@
-package com.hackathon.authservice.authenticationservice;
+package com.hackathon.apigatewayservice.apigatewayservice;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-public class AuthenticationServiceApplication {
+public class ApiGatewayServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AuthenticationServiceApplication.class, args);
+		SpringApplication.run(ApiGatewayServiceApplication.class, args);
 	}
 
-	
 }
