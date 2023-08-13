@@ -1,5 +1,7 @@
 package com.audit.auditservice.model;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,4 +25,19 @@ public class Audit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
+
+    @Column(name = "sourceAccoNo")
+    private Long sourceAccoNo;
+
+    @Column(name = "destinationAccNo")
+    private Long destinationAccNo;
+
+    @Column(name = "transAmount")
+    private Double transAmount;
+
+    @Column(name = "DateTime")
+    private LocalDateTime dateTime;
+
+    @Column(name = "status")
+    private Boolean status;
 }
