@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.accountservice.accountservice.dao.AccountRepo;
 import com.accountservice.accountservice.dto.Account;
+import com.accountservice.accountservice.dto.Transaction;
 
 
 @Service
@@ -21,7 +22,7 @@ public class AccountService {
 		return repo.findAll();
 	}
 	
-	public Account validateAccount(Account acc) {
+	public Account validateAccount(Transaction transaction) {
 		return repo.findById(acc.getId()).get();
 	}
 	

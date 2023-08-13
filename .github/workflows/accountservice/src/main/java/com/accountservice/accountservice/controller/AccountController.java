@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.accountservice.accountservice.dto.Account;
 import com.accountservice.accountservice.service.AccountService;
-
+import com.accountservice.accountservice.dto.Transaction;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 
 
 
@@ -25,38 +28,17 @@ public class AccountController {
 		return service.getAllAccounts();
 	}
 	
-	
-	@PostMapping("/accounts/validate")
-    public String getItems(@RequestHeader("Authorization") String authorizationHeader) {
-        // Validate JWT token from the Authorization header
-        String token = authorizationHeader.replace("Bearer ", "");
 
-        try {
-			if(token.equals("hskdfjUTustRgahsgd")) {
-				return "Hello, User.";
-				if(acc!=null && acc.getAcc_balance()>500) {
-			return "Account is validated and it has sufficient balance";
-		}
-			}
-			 
-			else {
-   return "You don't have access to this resource";
-			}
-            // Return the list of items (or any other data) if the token is valid.
-        } catch (Exception e) {
-            throw new IllegalArgumentException("Invalid token");
-        }
-    }
 	
 	@PostMapping("/accounts/validate")
 	
-	public String accountValidate(@RequestBody Account account) {
+	public String accountValidate(@RequestBody Transaction transaction) {
 		
 		try {
-		Account acc=service.validateAccount(account);
+		 Transaction trans=service.accountValidate(transaction);
 		
 		
-		if(acc!=null && acc.getAcc_balance()>500) {
+		if(trans!=null && acc.getAcc_balance()>500) {
 			return "Account is validated and it has sufficient balance";
 		}
 		}
