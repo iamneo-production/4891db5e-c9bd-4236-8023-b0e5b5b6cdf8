@@ -11,5 +11,7 @@ public interface AuditService {
     ResponseEntity<List<AuditDto>> getAllAudits();
 
     ResponseEntity<String> createAudit(AuditDto auditDto);
+
+    ResponseEntity<AuditDto> getAuditByID(Integer auditId);
     
 }
