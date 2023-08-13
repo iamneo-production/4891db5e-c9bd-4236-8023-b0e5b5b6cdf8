@@ -13,6 +13,9 @@ import com.hackathon.transaction.transactionservice.repository.TransactionReposi
 public class TransactionService{
 
     @Autowired
+    private AuditService auditService;
+
+    @Autowired
     private TransactionRepository transactionRepository;
 
     Double sourceAccBal = 500000.00;
@@ -23,6 +26,7 @@ public class TransactionService{
 
         LocalDateTime currentDateTime = LocalDateTime.now();
         deductCreditAccount(transactionDto.getTransferAmount());
+        auditService.createAudit(transactionDto);
         Transaction transaction = Transaction.builder()
                 .sourceAccountNumber(transactionDto.getSourceAccountNumber())
                 .destinationAccountNumber(transactionDto.getDestinationAccountNumber())
@@ -32,6 +36,7 @@ public class TransactionService{
                 .build();
 
         transactionRepository.save(transaction);
+
 
     }
 
