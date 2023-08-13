@@ -15,10 +15,14 @@ public class TransactionService{
     @Autowired
     private TransactionRepository transactionRepository;
 
+    Double sourceAccBal = 500000.00;
+    Double destinationAccBal = 500000.00;
+
+
     public void transferAmount (TransactionDto transactionDto){
 
         LocalDateTime currentDateTime = LocalDateTime.now();
-
+        deductCreditAccount(transactionDto.getTransferAmount());
         Transaction transaction = Transaction.builder()
                 .sourceAccountNumber(transactionDto.getSourceAccountNumber())
                 .destinationAccountNumber(transactionDto.getDestinationAccountNumber())
@@ -30,4 +34,11 @@ public class TransactionService{
         transactionRepository.save(transaction);
 
     }
+
+    public void deductCreditAccount(Double transferAmount){
+        sourceAccBal=sourceAccBal-transferAmount;
+        destinationAccBal=destinationAccBal+transferAmount;
+    }
+
+
 }

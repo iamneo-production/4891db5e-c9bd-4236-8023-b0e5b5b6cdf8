@@ -23,7 +23,12 @@ public class AccountService {
 	}
 	
 	public Account validateAccount(Transaction transaction) {
-		return repo.findById(acc.getId()).get();
+
+
+
+		return repo.findByCustomId(transaction.getSenderAccountNo());
 	}
 	
+	
+      
 }

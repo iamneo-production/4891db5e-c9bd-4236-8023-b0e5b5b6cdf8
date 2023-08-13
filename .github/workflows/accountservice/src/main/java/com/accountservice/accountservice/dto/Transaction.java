@@ -32,9 +32,3 @@ public class Transaction {
     private String recipientName;
 
     private double transferAmount;
-}
-
-
-
-    
-

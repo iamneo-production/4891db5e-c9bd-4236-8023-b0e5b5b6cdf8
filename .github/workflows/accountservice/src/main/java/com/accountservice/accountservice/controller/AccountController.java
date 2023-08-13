@@ -1,9 +1,8 @@
 package com.accountservice.accountservice.controller;
 
-import javax.swing.Spring;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,12 +33,13 @@ public class AccountController {
 	
 	public String accountValidate(@RequestBody Transaction transaction) {
 		
+		
 		try {
-		 Transaction trans=service.accountValidate(transaction);
+		Account account=service.validateAccount(transaction);
 		
 		
-		if(trans!=null && acc.getAcc_balance()>500) {
-			return "Account is validated and it has sufficient balance";
+		if(account!=null && transaction.getTransferAmount()>account.getAcc_balance()) {
+			return "Account is validated but it has insufficient balance to transfer";
 		}
 		}
 		catch (Exception e) {

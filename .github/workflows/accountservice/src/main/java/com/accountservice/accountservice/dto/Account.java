@@ -26,10 +26,11 @@ public class Account {
 
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "account_id")
+   private Integer accountId;
+   @Column(name = "account_number")
+    private long accountNo;
 
-	 private int Id;
-	 @Column(name="account_number")
-	 private String acc_number;
 	 @Column(name="account_name")
 	 private String acc_name;
 	 @Column(name="account_EmailID")
