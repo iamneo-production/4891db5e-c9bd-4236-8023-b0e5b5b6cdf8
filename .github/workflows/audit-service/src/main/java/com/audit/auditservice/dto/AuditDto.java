@@ -12,15 +12,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class AuditDto {
-    private Integer id;
+    private Integer transactionId;
 
-    private Long sourceAccoNo;
+    private Long sourceAccountNumber;
 
-    private Long destinationAccNo;
+    private Long destinationAccountNumber;
 
-    private Double transAmount;
+    private Double transferAmount;
 
-    private LocalDateTime dateTime;
+    private LocalDateTime transactinDateTime;
 
-    private Boolean status;
+    private Boolean transactionStatus;
 }

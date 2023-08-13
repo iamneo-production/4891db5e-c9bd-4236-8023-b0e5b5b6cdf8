@@ -21,7 +21,7 @@ import lombok.Setter;
 
 public class Transaction {
 
- 
+    
 
     private long senderAccountNo;
 
@@ -32,3 +32,9 @@ public class Transaction {
     private String recipientName;
 
     private double transferAmount;
+  public TransactionDto  toTransactionDto(Transaction transaction){
+    TransactionDto dto=new TransactionDto(transaction.getSenderAccountNo(),transaction.getRecipientAccountNo(),transaction.getTransferAmount());
+    return dto;
+    }
+    
+}

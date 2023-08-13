@@ -23,21 +23,22 @@ public class Audit {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Integer id;
+    @Column(name = "transactionId")
+    private Integer transactionId;
 
-    @Column(name = "sourceAccoNo")
-    private Long sourceAccoNo;
+    @Column(name = "sourceAccountNumber")
+    private Long sourceAccountNumber;
 
-    @Column(name = "destinationAccNo")
-    private Long destinationAccNo;
+    @Column(name = "destinationAccountNumber")
+    private Long destinationAccountNumber;
 
-    @Column(name = "transAmount")
-    private Double transAmount;
+    @Column(name = "transferAmount")
+    private Double transferAmount;
 
-    @Column(name = "DateTime")
-    private LocalDateTime dateTime;
+    @Column(name = "transactinDateTime")
+    private LocalDateTime transactinDateTime;
 
-    @Column(name = "status")
-    private Boolean status;
+    @Column(name = "transactionStatus")
+    private Boolean transactionStatus;
+   
 }
