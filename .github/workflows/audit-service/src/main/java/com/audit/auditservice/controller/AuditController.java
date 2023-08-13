@@ -21,7 +21,7 @@ public class AuditController {
     private AuditService auditService;
 
     
-    @GetMapping("/all/")
+    @GetMapping
     public ResponseEntity<List<AuditDto>> getAllAudits() {
         return auditService.getAllAudits();
     }

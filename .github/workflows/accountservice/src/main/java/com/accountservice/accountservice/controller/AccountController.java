@@ -27,33 +27,29 @@ public class AccountController {
 		return service.getAllAccounts();
 	}
 	
-
-	
-	@PostMapping("/accounts/validate")
-	
+    @PostMapping("/accounts/validate")
 	public String accountValidate(@RequestBody Transaction transaction) {
-		
-		
 		try {
-		Account account=service.validateAccount(transaction);
-		
-		
-		if(account!=null && transaction.getTransferAmount()>account.getAcc_balance()) {
-			return "Account is validated but it has insufficient balance to transfer";
-		}
+	String response=service.validateAccount(transaction);
+		if(!response.equals("OK")){
+         return response;
+        }
 		}
 		catch (Exception e) {
-			return "No account found";
+		  return "No account found";
 		}
 		return "Account Found";
+		}
+
 		
 		
-	}
+		
+		
+	
 	
 		
 		
-		
-    }
+}
 
 
 
